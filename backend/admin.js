@@ -6,7 +6,7 @@ import fs from 'fs';
 import { generateRandomFileName } from './helpers/generate-random-file-name.helper.js';
 
 const app = express();
-const port = 443;
+const port = 80;
 
 app.use(cors());
 app.use(express.json());
