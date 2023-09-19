@@ -23,7 +23,6 @@ app.get('/', (req, res) => {
 });
 
 app.post('/', upload.single('image'), (req, res) => {
-  console.log('adding')
   const dataToCreate = req.body;
 
   let filename;
@@ -50,7 +49,6 @@ app.post('/', upload.single('image'), (req, res) => {
 })
 
 app.put('/:id', upload.single('image'), async (req, res) => {
-  console.log('putting')
   const id = req.params.id;
   const dataToUpdate = req.body;
 
@@ -100,7 +98,6 @@ app.put('/:id', upload.single('image'), async (req, res) => {
 app.delete('/:id', async(req, res) => {
   const id = req.params.id;
   const currentProduct = await getProductById(id);
-  console.log(currentProduct)
     fs.unlink('./public/images/' + currentProduct.imagePath, (err) => {
       if (err) {
         if (err.code === 'ENOENT') {

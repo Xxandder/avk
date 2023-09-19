@@ -13,7 +13,6 @@ const dbFilePath = __dirname + '/db.sqlite';  // Путь к файлу базы
 
 function getAllData() {
   return new Promise((resolve, reject) => {
-    console.log(dbFilePath);
       const db = new sqlite3.Database(dbFilePath);
       db.all('SELECT * FROM products', (err, rows) => {
         if (err) {
@@ -67,9 +66,6 @@ function getAllData() {
           const lastIndex = queryParams.length - 1;
           queryParams.splice(lastIndex, 0, dataToUpdate.imagePath)
         }
-        console.log('imagePath: ', dataToUpdate.imagePath)
-        console.log('params: ', queryParams);
-        console.log('query: ', updateQuery)
 
         db.run(updateQuery, queryParams, function (err) {
           db.close();
