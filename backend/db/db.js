@@ -9,7 +9,7 @@ import { dirname } from 'path';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-const dbFilePath = __dirname + '\\db.sqlite';  // Путь к файлу базы данных SQLite
+const dbFilePath = __dirname + '/db.sqlite';  // Путь к файлу базы данных SQLite
 
 function getAllData() {
   return new Promise((resolve, reject) => {
