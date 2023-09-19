@@ -13,6 +13,7 @@ const dbFilePath = __dirname + '\\db.sqlite';  // Путь к файлу баз�
 
 function getAllData() {
   return new Promise((resolve, reject) => {
+    console.log(dbFilePath);
       const db = new sqlite3.Database(dbFilePath);
       db.all('SELECT * FROM products', (err, rows) => {
         if (err) {
